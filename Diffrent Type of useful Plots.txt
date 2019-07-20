@@ -1,0 +1,18 @@
+## Finding NULL values
+sns.heatmap(train.isnull(),yticklabels=False,cbar=False,cmap='viridis')
+
+## Find Out Liers
+sns.boxplot(x='Pclass',y='Age',data=train,palette='winter')
+
+## Histogram Distribution
+train['Fare'].hist(color='green',bins=40,figsize=(8,4))
+
+## Count of a column
+sns.countplot(x='SibSp',data=train)
+
+## Distributed Histogram Distribution
+sns.distplot(train['Age'].dropna(),kde=False,color='darkred',bins=30)
+
+## Count of Columns(used to find imbalance dataset)
+sns.countplot(x='Survived',hue='Pclass',data=train,palette='rainbow')
+
